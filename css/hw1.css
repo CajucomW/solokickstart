@@ -1,0 +1,63 @@
+a {
+    color: #528a8e;
+}
+
+.aboutwc {
+    font-size: 1.25rem;
+}
+
+.projectwc {
+    text-align: center;
+}
+
+.jjabout {
+    margin-left: 15px;
+    margin-top: -30px;
+}
+
+.jjabout2 {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.jjgrouppic {
+    text-align: center;
+}
+.jjpicwc4 {
+    border-radius: 100%;
+    position: relative;
+    display: inline-block;
+    margin: 3em;
+    width: 300px;
+}
+
+.ptagrouppic {
+    text-align: center;
+    margin-top: -10em;
+}
+
+.ptapic {
+    border-radius: 100%;
+    position: relative;
+    display: inline-block;
+    margin: 3em;
+    width: 300px;
+}
+
+.no-padding {
+    padding: 0em;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0em;
+}
+
+.twitter-tweet {
+    margin-left: 15vw;
+}
+
+@media (max-width: 550px) {
+    .twitter-tweet {
+        margin-left: 0em;
+        }
+}
