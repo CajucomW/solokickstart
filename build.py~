@@ -14,4 +14,5 @@ pta_html = top + content + bottom
 open('pta_full.html', 'w+').write(pta_html)
 
 content = open('content/jiujitsu.html').read()
-jiujitsu_html = top + content + bot
+jiujitsu_html = top + content + bottom
+open('jiujitsu_full.html', 'w+').write(jiujitsu_html)
