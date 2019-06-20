@@ -11,6 +11,7 @@ jiujitsu_full.html
 
 Any one of them should work to launch the site.
 
+
 COLOR SCHEMES:
 background="img/ricepaper.png"
 body {
