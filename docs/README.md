@@ -2,7 +2,7 @@
 
 *Please run build.py to generate webpage*
 
-Links to the project are named:
+Links to the project found docs/ directory:
 
 index_full.html
 tech_full.html
