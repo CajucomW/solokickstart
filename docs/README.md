@@ -1,6 +1,16 @@
 # solokickstart
 
-*Please run build.sh to generate webpage.*
+*Please run build.py to generate webpage*
+
+Links to the project found docs/ directory:
+
+index_full.html
+tech_full.html
+pta_full.html
+jiujitsu_full.html
+
+Any one of them should work to launch the site.
+
 
 COLOR SCHEMES:
 background="img/ricepaper.png"
