@@ -18,8 +18,8 @@ def main()
     jiujitsu_html = top + content + bottom
     open('docs/jiujitsu.html', 'w+').write(jiujitsu_html)
 
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
     
 pages = [
     {
