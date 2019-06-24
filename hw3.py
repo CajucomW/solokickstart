@@ -72,5 +72,3 @@ open('docs/index.html', 'w+').write(finished_index_page)
 
 
 
-
-
