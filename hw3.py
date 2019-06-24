@@ -22,24 +22,25 @@ def main():
 if __name__ == "__main__":
     main()
     
-#pages = [
-#    {
-#       'index': 'content/index.html',
-#        'index_docs': 'docs/index.html',
-#        'title': 'About Me',
-#    },
-#    {
-#        'tech': 'content/tech.html',
-#        'tech_docs': 'docs/tech.html',
-#        'title': 'Tech',
-#    },
-#    {
-#        'pta': 'content/pta.html',
-#        'pta_docs': 'docs/pta.html',
-#        'title': 'PTA/Healthcare',
-#    },
-#    {
-#        'jiujitsu': 'content/jiujitsu.html',
-#        'jiujitsu_docs': 'docs/jiujitsu.html',
-#        'title': 'JiuJitsu',
-#    },
+pages = [
+    {
+        'filename': 'content/index.html',
+        'output': 'docs/index.html',
+        'title': 'About Me',
+    },
+    {
+        'filename': 'content/tech.html',
+        'output': 'docs/tech.html',
+        'title': 'Tech',
+    },
+    {
+        'filename': 'content/pta.html',
+        'output': 'docs/pta.html',
+        'title': 'PTA/Healthcare',
+    },
+    {
+        'filename': 'content/jiujitsu.html',
+        'output': 'docs/jiujitsu.html',
+        'title': 'JiuJitsu',
+    },
+]
