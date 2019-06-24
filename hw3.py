@@ -51,7 +51,10 @@ for html in pages:
     page_title = html['title']
     print(page_title)
 
-
+template = open('templates/base.html').read()
+index_content = open('content/index.html').read()
+finished_index_page = template.replace('{{content}}', index_content)
+open('docs/index.html', 'w+').write(finished_index_page)
 
 
 
