@@ -44,3 +44,30 @@ pages = [
         'title': 'JiuJitsu',
     },
 ]
+
+# html = files in the list(pages)
+for html in pages:
+    print(html)
+    page_title = html['title']
+    print(page_title)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
