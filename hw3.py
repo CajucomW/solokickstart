@@ -22,41 +22,44 @@ def main():
 if __name__ == "__main__":
     main()
     
-pages = [
-    {
-        'filename': 'content/index.html',
-        'output': 'docs/index.html',
-        'title': 'About Me',
-    },
-    {
-        'filename': 'content/tech.html',
-        'output': 'docs/tech.html',
-        'title': 'Tech',
-    },
-    {
-        'filename': 'content/pta.html',
-        'output': 'docs/pta.html',
-        'title': 'PTA/Healthcare',
-    },
-    {
-        'filename': 'content/jiujitsu.html',
-        'output': 'docs/jiujitsu.html',
-        'title': 'JiuJitsu',
-    },
-]
+#pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
+#    {
+#        'filename': 'content/index.html',
+#        'output': 'docs/index.html',
+#        'title': 'About Me',
+#    },
+#    {
+#        'filename': 'content/tech.html',
+#        'output': 'docs/tech.html',
+#        'title': 'Tech',
+#    },
+#    {
+#        'filename': 'content/pta.html',
+#        'output': 'docs/pta.html',
+#        'title': 'PTA/Healthcare',
+#    },
+#    {
+#        'filename': 'content/jiujitsu.html',
+#        'output': 'docs/jiujitsu.html',
+#        'title': 'JiuJitsu',   
+#    },
+#]
 
 # html = files in the list(pages)
-for html in pages:
-    print(html)
-    page_title = html['title']
-    print(page_title)
+#for html in pages:
+#    print("---Pages---")
+#    print("Filename: ", html['filename'])
+#    print("Output: ", html['output'])
+#    print("Title: ", html['title'])
+#    page_title = html['title']
+#    print(page_title)
+#
 
+# THIS ONE WORKS
 template = open('templates/base.html').read()
 index_content = open('content/index.html').read()
 finished_index_page = template.replace('{{content}}', index_content)
 open('docs/index.html', 'w+').write(finished_index_page)
-
-
 
 
 
