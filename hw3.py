@@ -24,6 +24,16 @@ if __name__ == "__main__":
     
 #pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
 #    {
+#        'filename': 'templates/top.html',
+#        'output': 'docs/index.html',
+#        'title': 'Top Document',
+#    },
+#    {
+#        'filename': 'templates/bottom.html',
+#        'output': 'docs/index.html',
+#        'title': 'Bottom Document',
+#    },
+#    {
 #        'filename': 'content/index.html',
 #        'output': 'docs/index.html',
 #        'title': 'About Me',
@@ -45,21 +55,19 @@ if __name__ == "__main__":
 #    },
 #]
 
-# html = files in the list(pages)
+
 #for html in pages:
-#    print("---Pages---")
-#    print("Filename: ", html['filename'])
-#    print("Output: ", html['output'])
-#    print("Title: ", html['title'])
-#    page_title = html['title']
-#    print(page_title)
-#
+#    files = html['filename']
+#    open(files).read
+    
+
+
 
 # THIS ONE WORKS
-template = open('templates/base.html').read()
-index_content = open('content/index.html').read()
-finished_index_page = template.replace('{{content}}', index_content)
-open('docs/index.html', 'w+').write(finished_index_page)
+#template = open('templates/base.html').read()
+#index_content = open('content/index.html').read()
+#finished_index_page = template.replace('{{content}}', index_content)
+#open('docs/index.html', 'w+').write(finished_index_page)
 
 
 
