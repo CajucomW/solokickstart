@@ -19,9 +19,6 @@ def originally_main_func():
     jiujitsu_html = top + content + bottom
     open('docs/jiujitsu.html', 'w+').write(jiujitsu_html)
 
-#if __name__ == "__main__":
-#    main()
-
 #originally_main_func()
 
 #---------------------------Phase 2--------------------------------
@@ -32,51 +29,45 @@ pages = [
     'filename': 'content/index.html',
     'output': 'docs/index.html',
     'title': 'About Me',
-},
-{
+    },
+    {
     'filename': 'content/tech.html',
     'output': 'docs/tech.html',
     'title': 'Tech',
-},
+    },
     {
     'filename': 'content/pta.html',
     'output': 'docs/pta.html',
     'title': 'PTA/Healthcare',
-},
+    },
     {
     'filename': 'content/jiujitsu.html',
     'output': 'docs/jiujitsu.html',
     'title': 'JiuJitsu',   
-},
-    
+    },   
 ]
+
+#base.html contains 'top' and 'bottom' of html pages
+template = open('templates/base.html').read()
 
 def main():
 
-    template = open('templates/base.html').read()
-    #base.html contains 'top' and 'bottom' of html pages
-    for content in pages:
-        html_holder = open(content['filename']).read()
+#---------------------------Phase 4--------------------------------
+    def readwrite():
+        html_file = open(content['filename']).read()
 #---------------------------Phase 3--------------------------------
-        combined = template.replace('{{content}}', html_holder)
+        combined = template.replace('{{content}}', html_file)
         open(content['output'], 'w+').write(combined)
 
-    
+
+    for content in pages:
+       readwrite()
+
+        
 if __name__ == "__main__":
-    main()    
+    main()   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# old_title = content['title']
+# new_title = template.replace('{{title}}', old_title)
+# open(content['output'], 'w+').write(new_title)
 

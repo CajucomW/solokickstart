@@ -19,9 +19,6 @@ def originally_main_func():
     jiujitsu_html = top + content + bottom
     open('docs/jiujitsu.html', 'w+').write(jiujitsu_html)
 
-#if __name__ == "__main__":
-#    main()
-
 #originally_main_func()
 
 #---------------------------Phase 2--------------------------------
@@ -32,93 +29,49 @@ pages = [
     'filename': 'content/index.html',
     'output': 'docs/index.html',
     'title': 'About Me',
-},
-{
+    },
+    {
     'filename': 'content/tech.html',
     'output': 'docs/tech.html',
     'title': 'Tech',
-},
+    },
     {
     'filename': 'content/pta.html',
     'output': 'docs/pta.html',
     'title': 'PTA/Healthcare',
-},
+    },
     {
     'filename': 'content/jiujitsu.html',
     'output': 'docs/jiujitsu.html',
     'title': 'JiuJitsu',   
-},
-    
+    },   
 ]
+
+#base.html contains 'top' and 'bottom' of html pages
+template = open('templates/base.html').read()
 
 def main():
 
-    template = open('templates/base.html').read()
-    #base.html contains 'top' and 'bottom' of html pages
-    for content in pages:
-        html_holder = open(content['filename']).read()
+#---------------------------Phase 4--------------------------------
+    def readwrite():
+        html_file = open(content['filename']).read()
 #---------------------------Phase 3--------------------------------
-        combined = template.replace('{{content}}', html_holder)
-        open(content['output'], 'w+').write(combined)
-
-    
-if __name__ == "__main__":
-    main()    
-    
-    
-    
-##        html_holder = open(content['filename']).read()
-##        combined_holder = template.replace('{{content}}', html_holder)
-
-##            
-
-##        html_holder = open(content['filename']).read()
-##        combined_holder = template.replace('{{content}}', html_holder)
-##        open('docs/pta.html', 'w+').write(combined_holder)
-
-
-##        html_holder = open(content['filename']).read()
-##        combined_holder = template.replace('{{content}}', html_holder)
-##        open('docs/jiujitsu.html', 'w+').write(combined_holder)  
-#        
-
-
-#for html in pages:
-#    build_site(position = 'docs/tech.html')
-#        filename = open(html['filename']).read()
-#        combined_page = template.replace('{{content}}', filename)
-#        open('docs/index.html', 'w+').write(combined_page)
-#        build_site()
         
-#from_dict()
- 
-
-# THIS ONE WORKS but not what the HW needed
-#topfile = pages[0]
-#indexfile = pages[1]
-#bottomfile = pages[2]
-#topcontent = open(topfile['filename']).read()
-#indexcontent = open(indexfile['filename']).read()
-#bottomcontent = open(bottomfile['filename']).read()
-#finalcontent = topcontent + indexcontent + bottomcontent
-#open('docs/index.html', 'w+').write(finalcontent)
-
-
-# THIS ONE WORKS but not what the HW needed
-#template = open('templates/base.html').read()
-#index_content = open('content/index.html').read()
-#finished_index_page = template.replace('{{content}}', index_content)
-#open('docs/index.html', 'w+').write(finished_index_page)
+        new_title = template.replace('{{title}}', old_title)
+        combined = template.replace('{{content}}', html_file)
+        open(content['output'], 'w+').write(combined)
+        open(content['output'], 'w+').write(new_title)
+        
 
 
 
+    for content in pages:
+       old_title = content['title']
+       readwrite()
 
-
-
-
-
-
-
+        
+if __name__ == "__main__":
+    main()   
 
 
 
