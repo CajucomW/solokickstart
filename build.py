@@ -24,43 +24,82 @@
 
     
 
-def from_dict():
-    pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
+#def from_dict():
+pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
     
-        {
-        'filename': 'content/tech.html',
-        'output': 'docs/tech.html',
-        'title': 'Tech',
-    },
-        {
-        'filename': 'content/pta.html',
-        'output': 'docs/pta.html',
-        'title': 'PTA/Healthcare',
-    },
-        {
-        'filename': 'content/jiujitsu.html',
-        'output': 'docs/jiujitsu.html',
-        'title': 'JiuJitsu',   
-    },
-        {
-        'filename': 'content/index.html',
-        'output': 'docs/index.html',
-        'title': 'About Me',
-    },
-        
-    ]
-    template = open('templates/base.html').read()
-    for html in pages:
-#        function in function here, maybe
-        filename = open(html['filename']).read()
-        combined_page = template.replace('{{content}}', filename)
-#        return combined_page
-        open('docs/index.html', 'w+').write(combined_page)
-        
-from_dict()
+    {
+    'filename': 'content/index.html',
+    'output': 'docs/index.html',
+    'title': 'About Me',
+},
+{
+    'filename': 'content/tech.html',
+    'output': 'docs/tech.html',
+    'title': 'Tech',
+},
+    {
+    'filename': 'content/pta.html',
+    'output': 'docs/pta.html',
+    'title': 'PTA/Healthcare',
+},
+    {
+    'filename': 'content/jiujitsu.html',
+    'output': 'docs/jiujitsu.html',
+    'title': 'JiuJitsu',   
+},
     
-#def build_site():
+]
+# I need to write something here that goes through the list and makes
+# new docs/ files for site links
 
+#def output_directory(output='', combined=''):
+#    open(output, 'w+').write(combined)
+
+
+def main():
+
+    template = open('templates/base.html').read()
+    
+    for content in pages:
+        html_holder = open(content['filename']).read()
+        combined = template.replace('{{content}}', html_holder)
+        open(content['output'], 'w+').write(combined)
+
+##        html_holder = open(content['filename']).read()
+##        combined_holder = template.replace('{{content}}', html_holder)
+
+##            
+
+##        html_holder = open(content['filename']).read()
+##        combined_holder = template.replace('{{content}}', html_holder)
+##        open('docs/pta.html', 'w+').write(combined_holder)
+
+
+##        html_holder = open(content['filename']).read()
+##        combined_holder = template.replace('{{content}}', html_holder)
+##        open('docs/jiujitsu.html', 'w+').write(combined_holder)  
+#        
+if __name__ == "__main__":
+    main()    
+    
+    
+    
+    
+    
+    #TODO I need to be able to pick a specific item in the 
+    # list to assign a newfolder/newfile name
+
+
+
+#for html in pages:
+#    build_site(position = 'docs/tech.html')
+#        filename = open(html['filename']).read()
+#        combined_page = template.replace('{{content}}', filename)
+#        open('docs/index.html', 'w+').write(combined_page)
+#        build_site()
+        
+#from_dict()
+ 
 
 # So far this works.
 #topfile = pages[0]
