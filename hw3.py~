@@ -1,29 +1,33 @@
-#def main():
+def main():
 
-#    top = open('templates/top.html').read()
-#    bottom = open('templates/bottom.html').read()
-
-#    content = open('content/index.html').read()
-#    index_html = top + content + bottom
-#    open('docs/index.html', 'w+').write(index_html)
-
-#    content = open('content/tech.html').read()
-#    tech_html = top + content + bottom
-#    open('docs/tech.html', 'w+').write(tech_html)
-
-#    content = open('content/pta.html').read()
-#    pta_html = top + content + bottom
-#    open('docs/pta.html', 'w+').write(pta_html)
-
-#    content = open('content/jiujitsu.html').read()
-#    jiujitsu_html = top + content + bottom
-#    open('docs/jiujitsu.html', 'w+').write(jiujitsu_html)
-
-#if __name__ == "__main__":
-#    main()
+    top = open('templates/top.html').read()
+    bottom = open('templates/bottom.html').read()
     
-pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
-    {
+    content = open('content/index.html').read()
+    index_html = top + content + bottom
+    open('docs/index.html', 'w+').write(index_html)
+
+    content = open('content/tech.html').read()
+    tech_html = top + content + bottom
+    open('docs/tech.html', 'w+').write(tech_html)
+
+    content = open('content/pta.html').read()
+    pta_html = top + content + bottom
+    open('docs/pta.html', 'w+').write(pta_html)
+
+    content = open('content/jiujitsu.html').read()
+    jiujitsu_html = top + content + bottom
+    open('docs/jiujitsu.html', 'w+').write(jiujitsu_html)
+
+if __name__ == "__main__":
+    main()
+
+    
+
+def from_dict():
+    pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
+    
+        {
         'filename': 'content/tech.html',
         'output': 'docs/tech.html',
         'title': 'Tech',
@@ -43,15 +47,19 @@ pages = [   #TURN THIS INTO SOMETHING THAT PUTS OUT FULL HTML FILES
         'output': 'docs/index.html',
         'title': 'About Me',
     },
+        
+    ]
+    template = open('templates/base.html').read()
+    for html in pages:
+#        function in function here, maybe
+        filename = open(html['filename']).read()
+        combined_page = template.replace('{{content}}', filename)
+#        return combined_page
+        open('docs/index.html', 'w+').write(combined_page)
+        
+from_dict()
     
-]
-template = open('templates/base.html').read()
-
-for html in pages:
-    filename = open(html['filename']).read()
-    combined_page = template.replace('{{content}}', filename)
-    open('docs/index.html', 'w+').write(combined_page)
-
+#def build_site():
 
 
 # So far this works.
