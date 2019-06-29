@@ -59,15 +59,26 @@ def main():
         combined = template.replace('{{content}}', html_file)
         open(content['output'], 'w+').write(combined)
 
-
-    for content in pages:
-       readwrite()
-
+        # I can't get this to work.
+        for content in pages:
+            new_title = template.replace('{{title}}', content['title'])
+            open(content['output'], 'w+').write(new_title)
         
+            readwrite()
+
 if __name__ == "__main__":
     main()   
 
-# old_title = content['title']
-# new_title = template.replace('{{title}}', old_title)
-# open(content['output'], 'w+').write(new_title)
+
+
+
+
+
+
+
+
+
+
+
+
 

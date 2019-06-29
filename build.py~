@@ -56,22 +56,27 @@ def main():
     def readwrite():
         html_file = open(content['filename']).read()
 #---------------------------Phase 3--------------------------------
-        
-        new_title = template.replace('{{title}}', old_title)
         combined = template.replace('{{content}}', html_file)
         open(content['output'], 'w+').write(combined)
-        open(content['output'], 'w+').write(new_title)
+
+
+        for content in pages:
+            new_title = template.replace('{{title}}', content['title'])
+            open(content['output'], 'w+').write(new_title)
         
+            readwrite()
 
-
-
-    for content in pages:
-       old_title = content['title']
-       readwrite()
-
-        
 if __name__ == "__main__":
     main()   
+
+
+
+
+
+
+
+
+
 
 
 
