@@ -59,9 +59,9 @@ def main():
         combined = template.replace('{{content}}', html_file)
         open(content['output'], 'w+').write(combined)
 
-
+        # I can't get this to work.
         for content in pages:
-            new_title = template.replace('{{title}}', content['title'])
+            new_title = template.replace('<h1>{{title}}</h1>', content['title'])
             open(content['output'], 'w+').write(new_title)
         
             readwrite()
