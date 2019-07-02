@@ -22,18 +22,10 @@ for page in pages:
         "output": "docs/" + file_name,
     })
 
+    tabs = page['title']
     html_file = open(page['filename']).read()
-    combined = template.replace('{{content}}', html_file)
+    combined = template.replace('{{content}}', html_file,)
     open(page['output'], 'w+').write(combined)
-
-
-# if __name__ == "__main__":
-#   main()   
-
-
-
-
-
 
 
 
