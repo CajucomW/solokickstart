@@ -2,9 +2,9 @@ import os
 import glob
 from jinja2 import Template
 
+
 all_html_files = glob.glob("content/*.html")
 output = glob.glob('docs/*.html')
-template_html = open('templates/base.html').read()
 
 pages = []
 
@@ -18,8 +18,10 @@ for html_path in all_html_files:                            # html_path is conte
         "title": name_only,
         "output": doc_dir,
         "filename": file_name,
-        "content": html_content, 
+        "content": html_content,
     })
+
+template_html = open('templates/base.html').read()
 
 for page in pages:
     title = page['title']
